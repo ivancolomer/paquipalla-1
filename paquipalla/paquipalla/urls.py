@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+
+import  envelopes.views as ev
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', ev.CompanyListView.as_view(), name='Companies'),
+    url(r'^bars/(?P<pk>[0-9]+)$', ev.CompanyDetailView.as_view(), name='Companies_Detail'),
 ]
