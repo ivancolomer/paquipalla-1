@@ -1,0 +1,14 @@
+{% block content %}
+  <h1>Company: {{ company.name }}</h1>
+
+
+  <div style="margin-left:20px;margin-top:20px">
+      <h4>Envelopes</h4>
+      <ul>
+      {% for envelop in company.envelopes_set.all %}
+      <li><p><strong>Amount:</strong> {{envelop.amount}} For: {{envelope.motive}}</p>
+      </li>
+      {% endfor %}
+      </ul>
+  </div>
+{% endblock %}
